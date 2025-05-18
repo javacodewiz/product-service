@@ -1,0 +1,35 @@
+server:
+  port: 7400
+
+spring:
+  application:
+    name: product-service
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/product
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format-sql: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: "Product-service"
+    version: "0.0.1"
+    description: "Product Service"
